@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds) // frame: largura e altura do iphone
-        window?.rootViewController = ViewController() // criar o objeto viewcontroller
+        window?.rootViewController = SigninViewController() // criar o objeto viewcontroller
         window?.windowScene = windowScene // cena principal do app
         window?.makeKeyAndVisible() // se nao chamar a tela n aparece
     }
