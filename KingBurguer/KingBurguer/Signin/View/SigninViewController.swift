@@ -14,6 +14,14 @@ class SigninViewController: UIViewController {
         let ed = UITextField()
         ed.backgroundColor = .white
         ed.placeholder = "Entre com seu e-mail"
+        ed.translatesAutoresizingMaskIntoConstraints = false // sempre vai ser falso
+        return ed
+    }()
+    
+    let password: UITextField = {
+        let ed = UITextField()
+        ed.backgroundColor = .red
+        ed.placeholder = "Entre com sua senha"
         return ed
     }()
     
@@ -22,7 +30,26 @@ class SigninViewController: UIViewController {
         view.backgroundColor = .green // qnd for enum podemos emitir o nome da enum
         
         view.addSubview(email) // jogar uma outra view (email), uma hierarquia
-        email.frame = CGRect(x: 0, y: view.bounds.size.height / 2, width: view.bounds.size.width, height: 50)
+        //email.frame = CGRect(x: 0, y: view.bounds.size.height / 2, width: view.bounds.size.width, height: 50)
+        
+        // PROBLEMAS AO USAR FRAME!!
+        // 1. tem que fazer mta matematica a proporçao da tela
+        // 2. nao tem autolayout
+        
+        let emailConstraints = [
+            // 1. coordenadas da esquerda (leading)
+            email.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            // 2. coordenadas da direita (trailing)
+            email.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            // 3. coordenadas do centro
+            email.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100.0),
+            // 4. coordenadas (tamanho fixo) do height
+            email.heightAnchor.constraint(equalToConstant: 50.0)
+        ]
+        NSLayoutConstraint.activate(emailConstraints)
+        
+        //view.addSubview(password)
+        //password.frame = CGRect(x: 0, y: (view.bounds.size.height / 2) + 50, width: view.bounds.size.width, height: 50)
         
     }
     
