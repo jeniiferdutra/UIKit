@@ -76,8 +76,10 @@ class SigninViewController: UIViewController {
         NSLayoutConstraint.activate(emailConstraints)
         NSLayoutConstraint.activate(sendConstraits)
         
-        //password.frame = CGRect(x: 0, y: (view.bounds.size.height / 2) + 50, width: view.bounds.size.width, height: 50)
-        
+        send.addTarget(self, action: #selector(sendDidTap), for: .touchUpInside)
     }
     
+    @objc func sendDidTap(_ sender: UIButton) { // padrao
+        print("CLICOU!!")
+    }
 }
