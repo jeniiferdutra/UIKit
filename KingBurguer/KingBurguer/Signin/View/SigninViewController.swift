@@ -26,12 +26,13 @@ class SigninViewController: UIViewController {
         return ed
     }()
     
-    let send: UIButton = {
+    lazy var send: UIButton = { // lazy var = so vai chamar este bloco qnd precisarmos dele
         let btn = UIButton()
         btn.setTitle("Entrar", for: .normal)
         btn.setTitleColor(.black, for: .normal)
         btn.backgroundColor = .yellow
         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(sendDidTap), for: .touchUpInside)
         return btn
     }()
     
@@ -76,7 +77,6 @@ class SigninViewController: UIViewController {
         NSLayoutConstraint.activate(emailConstraints)
         NSLayoutConstraint.activate(sendConstraits)
         
-        send.addTarget(self, action: #selector(sendDidTap), for: .touchUpInside)
     }
     
     @objc func sendDidTap(_ sender: UIButton) { // padrao
