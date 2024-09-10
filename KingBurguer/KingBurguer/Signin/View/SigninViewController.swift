@@ -22,6 +22,7 @@ class SigninViewController: UIViewController {
         let ed = UITextField()
         ed.backgroundColor = .red
         ed.placeholder = "Entre com sua senha"
+        ed.translatesAutoresizingMaskIntoConstraints = false
         return ed
     }()
     
@@ -31,6 +32,8 @@ class SigninViewController: UIViewController {
         
         view.addSubview(email) // jogar uma outra view (email), uma hierarquia
         //email.frame = CGRect(x: 0, y: view.bounds.size.height / 2, width: view.bounds.size.width, height: 50)
+        view.addSubview(password)
+
         
         // PROBLEMAS AO USAR FRAME!!
         // 1. tem que fazer mta matematica a proporçao da tela
@@ -42,13 +45,22 @@ class SigninViewController: UIViewController {
             // 2. coordenadas da direita (trailing)
             email.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             // 3. coordenadas do centro
-            email.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100.0),
+            email.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             // 4. coordenadas (tamanho fixo) do height
             email.heightAnchor.constraint(equalToConstant: 50.0)
         ]
         NSLayoutConstraint.activate(emailConstraints)
         
-        //view.addSubview(password)
+        let passwordConstrait = [
+            password.leadingAnchor.constraint(equalTo: email.leadingAnchor),
+            password.trailingAnchor.constraint(equalTo: email.trailingAnchor),
+            password.topAnchor.constraint(equalTo: email.bottomAnchor, constant: 10.0),
+            password.heightAnchor.constraint(equalToConstant: 50.0)
+        ]
+        NSLayoutConstraint.activate(passwordConstrait)
+        
+        
+        view.addSubview(password)
         //password.frame = CGRect(x: 0, y: (view.bounds.size.height / 2) + 50, width: view.bounds.size.width, height: 50)
         
     }
