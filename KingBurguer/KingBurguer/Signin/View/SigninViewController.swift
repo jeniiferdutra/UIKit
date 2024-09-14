@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class SigninViewController: UIViewController {
+class SigninViewController: UIViewController, SignInViewModelDelegate {
     
     let email: UITextField = { // centralizar os componentes num lugar só
         let ed = UITextField()
@@ -35,6 +35,12 @@ class SigninViewController: UIViewController {
         btn.addTarget(self, action: #selector(sendDidTap), for: .touchUpInside)
         return btn
     }()
+    
+    var viewModel: SigninViewModel? {
+        didSet {
+            viewModel?.delegate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,6 +86,10 @@ class SigninViewController: UIViewController {
     }
     
     @objc func sendDidTap(_ sender: UIButton) { // padrao
-        print("CLICOU!!")
+        viewModel?.send()
+    }
+    
+    func viewModelDidChanged(viewModel: SigninViewModel) {
+        print("o viewmodel notificou o viewcontroller")
     }
 }

@@ -16,8 +16,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
+        let viewModel = SigninViewModel()
+        // O ViewModel serve como um intermediário entre a View (interface gráfica) e os dados (Model). Ele não interage diretamente com a interface, mas processa os dados que a View vai exibir e lida com eventos da interface (como cliques em botões ou entradas do usuário)
+        
+        let signinVC = SigninViewController() // criar a instancia e associando o viewmodel a controladora de visualizacao
+        signinVC.viewModel = viewModel
+        
         window = UIWindow(frame: windowScene.coordinateSpace.bounds) // frame: largura e altura do iphone
-        window?.rootViewController = SigninViewController() // criar o objeto viewcontroller
+        window?.rootViewController =  signinVC// controlador principal 
         window?.windowScene = windowScene // cena principal do app
         window?.makeKeyAndVisible() // se nao chamar a tela n aparece
     }
