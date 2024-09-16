@@ -89,7 +89,8 @@ class SigninViewController: UIViewController, SignInViewModelDelegate {
         viewModel?.send()
     }
     
-    func viewModelDidChanged(viewModel: SigninViewModel) {
-        print("o viewmodel notificou o viewcontroller")
+    // OBSERVADOR (O.O) olhando qlq mudanca de estado do viewModel
+    func viewModelDidChanged(state: SigninState) {
+        print("o viewmodel notificou com o state: \(state)") // viewmodel que dispara esse metodo
     }
 }
