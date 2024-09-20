@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class SigninViewController: UIViewController, SignInViewModelDelegate {
+class SigninViewController: UIViewController {
     
     let email: UITextField = { // centralizar os componentes num lugar só
         let ed = UITextField()
@@ -42,6 +42,7 @@ class SigninViewController: UIViewController, SignInViewModelDelegate {
         }
     }
     
+    // 1. definicao de layout 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green // qnd for enum podemos emitir o nome da enum
@@ -85,10 +86,15 @@ class SigninViewController: UIViewController, SignInViewModelDelegate {
         
     }
     
+    // 2. evento de touch
     @objc func sendDidTap(_ sender: UIButton) { // padrao
         viewModel?.send()
     }
-    
+}
+
+// extensao da classe, tem o msm comportamento se tivesse dentro da classe
+// manter dentro da classe somente interface grafica e eventos de touch
+extension SigninViewController: SignInViewModelDelegate {
     // OBSERVADOR (O.O) olhando qlq mudanca de estado do viewModel
     func viewModelDidChanged(state: SigninState) {
         print("o viewmodel notificou com o state: \(state)") // viewmodel que dispara esse metodo
