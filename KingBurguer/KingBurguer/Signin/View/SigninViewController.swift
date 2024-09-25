@@ -10,6 +10,7 @@ import UIKit
 
 class SigninViewController: UIViewController {
     
+    // 1. definicao de layout
     let email: UITextField = { // centralizar os componentes num lugar só
         let ed = UITextField()
         ed.backgroundColor = .white
@@ -42,7 +43,6 @@ class SigninViewController: UIViewController {
         }
     }
     
-    // 1. definicao de layout 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green // qnd for enum podemos emitir o nome da enum
@@ -50,10 +50,6 @@ class SigninViewController: UIViewController {
         view.addSubview(email) // jogar uma outra view (email), uma hierarquia
         view.addSubview(password)
         view.addSubview(send)
-        
-        // PROBLEMAS AO USAR FRAME!!
-        // 1. tem que fazer mta matematica a proporçao da tela
-        // 2. nao tem autolayout
         
         let emailConstraints = [
             // 1. coordenadas da esquerda (leading)
@@ -92,6 +88,7 @@ class SigninViewController: UIViewController {
     }
 }
 
+// 3. observadores
 // extensao da classe, tem o msm comportamento se tivesse dentro da classe
 // manter dentro da classe somente interface grafica e eventos de touch
 extension SigninViewController: SignInViewModelDelegate {
