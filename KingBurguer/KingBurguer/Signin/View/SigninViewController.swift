@@ -94,6 +94,22 @@ class SigninViewController: UIViewController {
 extension SigninViewController: SignInViewModelDelegate {
     // OBSERVADOR (O.O) olhando qlq mudanca de estado do viewModel
     func viewModelDidChanged(state: SigninState) {
-        print("o viewmodel notificou com o state: \(state)") // viewmodel que dispara esse metodo
+        switch(state) { // viewmodel que dispara esse metodo
+        case .none:
+            break
+        case .loading:
+            // mostrar o progress
+            break
+        case .goToHome:
+            // navegar pela tela principal
+            break
+        case .error(let msg):
+            let alert = UIAlertController(title: "Titulo", message: msg, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default))
+            
+            self.present(alert, animated: true)// funcao padrao de toda viewController
+            break
+        }
     }
 }
