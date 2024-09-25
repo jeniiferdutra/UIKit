@@ -13,7 +13,7 @@ class SigninViewController: UIViewController {
     // 1. definicao de layout
     let email: UITextField = { // centralizar os componentes num lugar só
         let ed = UITextField()
-        ed.backgroundColor = .white
+        ed.backgroundColor = .blue
         ed.placeholder = "Entre com seu e-mail"
         ed.translatesAutoresizingMaskIntoConstraints = false // sempre vai ser falso
         return ed
@@ -37,6 +37,16 @@ class SigninViewController: UIViewController {
         return btn
     }()
     
+    lazy var register: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("Criar Conta", for: .normal)
+        btn.setTitleColor(.white, for: .normal)
+        btn.backgroundColor = .purple
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(registerDidTap), for: .touchUpInside)
+        return btn
+    }()
+    
     var viewModel: SigninViewModel? {
         didSet {
             viewModel?.delegate = self
@@ -45,11 +55,14 @@ class SigninViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green // qnd for enum podemos emitir o nome da enum
+        view.backgroundColor = .systemBackground // qnd for enum podemos emitir o nome da enum
+        
+        navigationItem.title = "Login"
         
         view.addSubview(email) // jogar uma outra view (email), uma hierarquia
         view.addSubview(password)
         view.addSubview(send)
+        view.addSubview(register)
         
         let emailConstraints = [
             // 1. coordenadas da esquerda (leading)
@@ -76,15 +89,29 @@ class SigninViewController: UIViewController {
             send.heightAnchor.constraint(equalToConstant: 50.0)
         ]
         
+        let registerConstraits = [
+            register.leadingAnchor.constraint(equalTo: email.leadingAnchor),
+            register.trailingAnchor.constraint(equalTo: email.trailingAnchor),
+            register.topAnchor.constraint(equalTo: send.bottomAnchor, constant: 15.0),
+            register.heightAnchor.constraint(equalToConstant: 50.0)
+        ]
+        
         NSLayoutConstraint.activate(passwordConstraits)
         NSLayoutConstraint.activate(emailConstraints)
         NSLayoutConstraint.activate(sendConstraits)
+        NSLayoutConstraint.activate(registerConstraits)
         
     }
     
     // 2. evento de touch
     @objc func sendDidTap(_ sender: UIButton) { // padrao
         viewModel?.send()
+    }
+    
+    @objc func registerDidTap(_ sender: UIButton) {
+        // navegar para outra tela
+        let signUpVC = SignUpViewController()
+        navigationController?.pushViewController(signUpVC, animated: true)
     }
 }
 
@@ -105,9 +132,7 @@ extension SigninViewController: SignInViewModelDelegate {
             break
         case .error(let msg):
             let alert = UIAlertController(title: "Titulo", message: msg, preferredStyle: .alert)
-            
             alert.addAction(UIAlertAction(title: "Ok", style: .default))
-            
             self.present(alert, animated: true)// funcao padrao de toda viewController
             break
         }

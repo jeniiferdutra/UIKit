@@ -22,8 +22,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let signinVC = SigninViewController() // criar a instancia e associando o viewmodel a controladora de visualizacao
         signinVC.viewModel = viewModel
         
+        let navigationVC = UINavigationController(rootViewController: signinVC)
+        
         window = UIWindow(frame: windowScene.coordinateSpace.bounds) // frame: largura e altura do iphone
-        window?.rootViewController =  signinVC// controlador principal 
+        window?.rootViewController =  navigationVC // controlador principal 
         window?.windowScene = windowScene // cena principal do app
         window?.makeKeyAndVisible() // se nao chamar a tela n aparece
     }

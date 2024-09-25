@@ -14,6 +14,7 @@
 		D082DD442C8E7C80003B9389 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D082DD432C8E7C80003B9389 /* SigninViewController.swift */; };
 		D0847EA52C926A1900C5AC84 /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0847EA42C926A1900C5AC84 /* SigninViewModel.swift */; };
 		D0957F952C98F562004D5DF7 /* SigninState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0957F942C98F562004D5DF7 /* SigninState.swift */; };
+		D09AE9242CA3A1E200EF4904 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09AE9232CA3A1E200EF4904 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D082DD432C8E7C80003B9389 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		D0847EA42C926A1900C5AC84 /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
 		D0957F942C98F562004D5DF7 /* SigninState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninState.swift; sourceTree = "<group>"; };
+		D09AE9232CA3A1E200EF4904 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		D08266692C8BB1DC007F3E01 /* KingBurguer */ = {
 			isa = PBXGroup;
 			children = (
+				D09AE9212CA3A0ED00EF4904 /* SignUp */,
 				D082DD412C8E7C00003B9389 /* Signin */,
 				D082666A2C8BB1DC007F3E01 /* AppDelegate.swift */,
 				D082666C2C8BB1DC007F3E01 /* SceneDelegate.swift */,
@@ -92,6 +95,22 @@
 				D0957F942C98F562004D5DF7 /* SigninState.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D09AE9212CA3A0ED00EF4904 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				D09AE9222CA3A10000EF4904 /* View */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		D09AE9222CA3A10000EF4904 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D09AE9232CA3A1E200EF4904 /* SignUpViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +187,7 @@
 				D082DD442C8E7C80003B9389 /* SigninViewController.swift in Sources */,
 				D082666B2C8BB1DC007F3E01 /* AppDelegate.swift in Sources */,
 				D0957F952C98F562004D5DF7 /* SigninState.swift in Sources */,
+				D09AE9242CA3A1E200EF4904 /* SignUpViewController.swift in Sources */,
 				D082666D2C8BB1DC007F3E01 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
