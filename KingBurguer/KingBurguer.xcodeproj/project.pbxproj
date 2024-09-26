@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D07DC1B22CA4FDAD0006D4EA /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07DC1B12CA4FDAD0006D4EA /* SignInCoordinator.swift */; };
 		D082666B2C8BB1DC007F3E01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D082666A2C8BB1DC007F3E01 /* AppDelegate.swift */; };
 		D082666D2C8BB1DC007F3E01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D082666C2C8BB1DC007F3E01 /* SceneDelegate.swift */; };
 		D08266742C8BB1E0007F3E01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08266732C8BB1E0007F3E01 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D07DC1B12CA4FDAD0006D4EA /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
 		D08266672C8BB1DC007F3E01 /* KingBurguer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KingBurguer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D082666A2C8BB1DC007F3E01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D082666C2C8BB1DC007F3E01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			children = (
 				D0847EA32C9269F100C5AC84 /* ViewModel */,
 				D082DD422C8E7C34003B9389 /* View */,
+				D07DC1B12CA4FDAD0006D4EA /* SignInCoordinator.swift */,
 			);
 			path = Signin;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				D082DD442C8E7C80003B9389 /* SigninViewController.swift in Sources */,
 				D082666B2C8BB1DC007F3E01 /* AppDelegate.swift in Sources */,
 				D0957F952C98F562004D5DF7 /* SigninState.swift in Sources */,
+				D07DC1B22CA4FDAD0006D4EA /* SignInCoordinator.swift in Sources */,
 				D09AE9242CA3A1E200EF4904 /* SignUpViewController.swift in Sources */,
 				D082666D2C8BB1DC007F3E01 /* SceneDelegate.swift in Sources */,
 			);
