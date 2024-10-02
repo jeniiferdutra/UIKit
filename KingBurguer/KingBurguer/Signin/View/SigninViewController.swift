@@ -110,8 +110,7 @@ class SigninViewController: UIViewController {
     
     @objc func registerDidTap(_ sender: UIButton) {
         // navegar para outra tela
-        let signUpVC = SignUpViewController()
-        navigationController?.pushViewController(signUpVC, animated: true)
+        viewModel?.goToSignUp()
     }
 }
 

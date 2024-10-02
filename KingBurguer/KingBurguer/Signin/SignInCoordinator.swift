@@ -20,14 +20,19 @@ class SignInCoordinator {
     
     func start() {
         let viewModel = SigninViewModel()
-        // O ViewModel serve como um intermediário entre a View (interface gráfica) e os dados (Model). Ele não interage diretamente com a interface, mas processa os dados que a View vai exibir e lida com eventos da interface (como cliques em botões ou entradas do usuário)
+        viewModel.coordinator = self
         
-        let signinVC = SigninViewController() // criar a instancia e associando o viewmodel a controladora de visualizacao
+        let signinVC = SigninViewController()
         signinVC.viewModel = viewModel
         
         navigationController.pushViewController(signinVC, animated: true)
                 
         window?.rootViewController =  navigationController // controlador principal
         window?.makeKeyAndVisible() // se nao chamar a tela n aparece
+    }
+    
+    func signUp() {
+        let signUpCoordinator = SignUpCoordinator(navigationController: navigationController)
+        signUpCoordinator.start()
     }
 }

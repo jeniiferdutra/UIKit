@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D010D7262CACD318006B8546 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D010D7252CACD318006B8546 /* SignUpCoordinator.swift */; };
 		D07DC1B22CA4FDAD0006D4EA /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07DC1B12CA4FDAD0006D4EA /* SignInCoordinator.swift */; };
 		D082666B2C8BB1DC007F3E01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D082666A2C8BB1DC007F3E01 /* AppDelegate.swift */; };
 		D082666D2C8BB1DC007F3E01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D082666C2C8BB1DC007F3E01 /* SceneDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D010D7252CACD318006B8546 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
 		D07DC1B12CA4FDAD0006D4EA /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
 		D08266672C8BB1DC007F3E01 /* KingBurguer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KingBurguer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D082666A2C8BB1DC007F3E01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				D09AE9222CA3A10000EF4904 /* View */,
+				D010D7252CACD318006B8546 /* SignUpCoordinator.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				D082DD442C8E7C80003B9389 /* SigninViewController.swift in Sources */,
 				D082666B2C8BB1DC007F3E01 /* AppDelegate.swift in Sources */,
 				D0957F952C98F562004D5DF7 /* SigninState.swift in Sources */,
+				D010D7262CACD318006B8546 /* SignUpCoordinator.swift in Sources */,
 				D07DC1B22CA4FDAD0006D4EA /* SignInCoordinator.swift in Sources */,
 				D09AE9242CA3A1E200EF4904 /* SignUpViewController.swift in Sources */,
 				D082666D2C8BB1DC007F3E01 /* SceneDelegate.swift in Sources */,

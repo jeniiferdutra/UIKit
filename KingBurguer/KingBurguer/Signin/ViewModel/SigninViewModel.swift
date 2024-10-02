@@ -14,6 +14,7 @@ protocol SignInViewModelDelegate {
 class SigninViewModel {
     
     var delegate: SignInViewModelDelegate?
+    var coordinator: SignInCoordinator?
     
     var state: SigninState = .none {
         didSet { // vai ser disparada qnd mudar o state
@@ -30,9 +31,7 @@ class SigninViewModel {
         }
     }
     
-    
-    // 1. NADA - preparado para receber o imput
-    // 2. CARREGANDO
-    // 3. SUCESSO - navegar para tela principal
-    // 4. ERRO - mostrar uma mensagem vinda do servidor (usuario nao existe)
+    func goToSignUp() {
+        coordinator?.signUp()
+    }
 }
