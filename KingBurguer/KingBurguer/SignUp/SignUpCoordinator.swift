@@ -17,8 +17,10 @@ class SignUpCoordinator {
     }
     
     func start() {
+        let viewModel = SignUpViewModel()
+        viewModel.coordinator = self
         let signUpVC = SignUpViewController()
-        // tera um viewmodel
+        signUpVC.viewModel = viewModel
         
         navigationController.pushViewController(signUpVC, animated: true)
         
