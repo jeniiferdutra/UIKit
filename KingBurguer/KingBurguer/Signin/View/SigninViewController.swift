@@ -128,6 +128,7 @@ extension SigninViewController: SignInViewModelDelegate {
             break
         case .goToHome:
             // navegar pela tela principal
+            viewModel?.goToHome()
             break
         case .error(let msg):
             let alert = UIAlertController(title: "Titulo", message: msg, preferredStyle: .alert)
