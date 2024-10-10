@@ -103,6 +103,16 @@ class SigninViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) { // método que é disparado toda vez que a view aparece
+        super.viewDidAppear(animated)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)) // interpreta multiplos toques
+        view.addGestureRecognizer(tap) // <- vai ouvir qlq evento de touch q acontecer
+    }
+    
+    @objc func dismissKeyboard(_ view: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
+    
     // 2. evento de touch
     @objc func sendDidTap(_ sender: UIButton) { // padrao
         viewModel?.send()
