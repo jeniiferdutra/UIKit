@@ -27,7 +27,7 @@ class SignUpViewModel {
         
         // aqui eu espero 2 segundos (LATENCIA DE REDE)
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.state = .goToHome // usar self pq dentro desse bloco n tem a ref da classe
+            self.state = .error("Erro interno no servidor") // usar self pq dentro desse bloco n tem a ref da classe
         }
     }
 
