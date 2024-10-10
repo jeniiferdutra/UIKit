@@ -11,18 +11,22 @@ import UIKit
 class SigninViewController: UIViewController {
     
     // 1. definicao de layout
-    let email: UITextField = { // centralizar os componentes num lugar só
+    lazy var email: UITextField = { // centralizar os componentes num lugar só
         let ed = UITextField()
         ed.backgroundColor = .blue
         ed.placeholder = "Entre com seu e-mail"
+        ed.returnKeyType = .next
+        ed.delegate = self // a viewcontroller que vai administrar os eventos
         ed.translatesAutoresizingMaskIntoConstraints = false // sempre vai ser falso
         return ed
     }()
     
-    let password: UITextField = {
+    lazy var password: UITextField = {
         let ed = UITextField()
         ed.backgroundColor = .red
         ed.placeholder = "Entre com sua senha"
+        ed.returnKeyType = .done
+        ed.delegate = self
         ed.translatesAutoresizingMaskIntoConstraints = false
         return ed
     }()
@@ -110,7 +114,7 @@ class SigninViewController: UIViewController {
     }
     
     @objc func dismissKeyboard(_ view: UITapGestureRecognizer) {
-        self.view.endEditing(true)
+        self.view.endEditing(true) // esconder o teclado ao clicar na tela
     }
     
     // 2. evento de touch
@@ -121,6 +125,17 @@ class SigninViewController: UIViewController {
     @objc func registerDidTap(_ sender: UIButton) {
         // navegar para outra tela
         viewModel?.goToSignUp()
+    }
+}
+
+extension SigninViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool { // metodo q vai ser disparado td vez que houver o evento de clique no botao
+        if (textField.returnKeyType == .done) {
+            view.endEditing(true) // se for a opcao de password
+        } else {
+            password.becomeFirstResponder()
+        }
+        return false // sempre retornar false
     }
 }
 
