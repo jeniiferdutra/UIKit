@@ -30,5 +30,9 @@ class SignUpViewModel {
             self.state = .goToHome // usar self pq dentro desse bloco n tem a ref da classe
         }
     }
+    
+    func goToHome() {
+        coordinator?.home()
+    }
 
 }

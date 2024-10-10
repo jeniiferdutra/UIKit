@@ -12,6 +12,8 @@ class SignUpCoordinator {
     
     private let navigationController: UINavigationController
     
+    var parentCoordinator: SignInCoordinator?
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
@@ -24,5 +26,9 @@ class SignUpCoordinator {
         
         navigationController.pushViewController(signUpVC, animated: true)
         
+    }
+    
+    func home() {
+        parentCoordinator?.home()
     }
 }
