@@ -27,7 +27,7 @@ class SigninViewModel {
         
         // aqui eu espero 2 segundos (LATENCIA DE REDE)
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.state = .error("Usuário nao existe") // usar self pq dentro desse bloco n tem a ref da classe
+            self.state = .goToHome // usar self pq dentro desse bloco n tem a ref da classe
         }
     }
     
