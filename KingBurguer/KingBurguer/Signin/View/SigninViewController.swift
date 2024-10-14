@@ -76,17 +76,11 @@ class SigninViewController: UIViewController {
         
         navigationItem.title = "Login"
         
-        var texts: [UITextField] = []
-        for i in 0..<30 {
-            let t = UITextField()
-            t.placeholder = "ola \(i)"
-            t.borderStyle = .roundedRect
-            t.translatesAutoresizingMaskIntoConstraints = false
-            container.addSubview(t)
-            texts.append(t)
-        }
+        container.addSubview(email) // jogar uma outra view (email), uma hierarquia
+        container.addSubview(password)
+        container.addSubview(send)
+        container.addSubview(register)
         
-        container.addSubview(send) // dentro do container tem 30 botoes + o botao enviar
         scroll.addSubview(container) // dentro da scrollview tem o container
         view.addSubview(scroll) // view principal tem scrollview dentro
         
@@ -109,68 +103,47 @@ class SigninViewController: UIViewController {
             container.bottomAnchor.constraint(equalTo: scroll.bottomAnchor)
         ]
         
-        for i in 0..<texts.count {
-            if i == 0 { // ou seja, se for o primeiro textfield
-                NSLayoutConstraint.activate([
-                    texts[i].leadingAnchor.constraint(equalTo: container.leadingAnchor),
-                    texts[i].trailingAnchor.constraint(equalTo: container.trailingAnchor),
-                    texts[i].heightAnchor.constraint(equalToConstant: 50.0),
-                    texts[i].topAnchor.constraint(equalTo: container.topAnchor, constant: 10.0),
-                ])
-            } else {
-                NSLayoutConstraint.activate([
-                    texts[i].leadingAnchor.constraint(equalTo: container.leadingAnchor),
-                    texts[i].trailingAnchor.constraint(equalTo: container.trailingAnchor),
-                    texts[i].heightAnchor.constraint(equalToConstant: 50.0),
-                    texts[i].topAnchor.constraint(equalTo: texts[i-1].bottomAnchor, constant: 10.0),
-                ])
-            }
-        }
+        let emailConstraints = [
+            // 1. coordenadas da esquerda (leading)
+            email.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            // 2. coordenadas da direita (trailing)
+            email.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            // 3. coordenadas do centro
+            email.centerYAnchor.constraint(equalTo: container.centerYAnchor, constant: -150.0),
+            // 4. coordenadas (tamanho fixo) do height
+            email.heightAnchor.constraint(equalToConstant: 50.0)
+        ]
         
-//        view.addSubview(email) // jogar uma outra view (email), uma hierarquia
-//        view.addSubview(password)
-//        view.addSubview(send)
-//        view.addSubview(register)
-        
-//        let emailConstraints = [
-//            // 1. coordenadas da esquerda (leading)
-//            email.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            // 2. coordenadas da direita (trailing)
-//            email.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            // 3. coordenadas do centro
-//            email.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-//            // 4. coordenadas (tamanho fixo) do height
-//            email.heightAnchor.constraint(equalToConstant: 50.0)
-//        ]
-        
-//        let passwordConstraits = [
-//            password.leadingAnchor.constraint(equalTo: email.leadingAnchor),
-//            password.trailingAnchor.constraint(equalTo: email.trailingAnchor),
-//            password.topAnchor.constraint(equalTo: email.bottomAnchor, constant: 10.0),
-//            password.heightAnchor.constraint(equalToConstant: 50.0)
-//        ]
-//        
+        let passwordConstraits = [
+            password.leadingAnchor.constraint(equalTo: email.leadingAnchor),
+            password.trailingAnchor.constraint(equalTo: email.trailingAnchor),
+            password.topAnchor.constraint(equalTo: email.bottomAnchor, constant: 10.0),
+            password.heightAnchor.constraint(equalToConstant: 50.0)
+        ]
+    
         let sendConstraits = [
             send.leadingAnchor.constraint(equalTo: container.leadingAnchor),
             send.trailingAnchor.constraint(equalTo: container.trailingAnchor),
-            send.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -20.0),
-            send.topAnchor.constraint(greaterThanOrEqualTo: texts.last!.bottomAnchor, constant: 10.0),
+            // send.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -20.0),
+            send.topAnchor.constraint(equalTo: password.bottomAnchor, constant: 10.0),
             send.heightAnchor.constraint(equalToConstant: 50.0)
         ]
         
-//        let registerConstraits = [
-//            register.leadingAnchor.constraint(equalTo: email.leadingAnchor),
-//            register.trailingAnchor.constraint(equalTo: email.trailingAnchor),
-//            register.topAnchor.constraint(equalTo: send.bottomAnchor, constant: 15.0),
-//            register.heightAnchor.constraint(equalToConstant: 50.0)
-//        ]
+        let registerConstraits = [
+            register.leadingAnchor.constraint(equalTo: email.leadingAnchor),
+            register.trailingAnchor.constraint(equalTo: email.trailingAnchor),
+            register.topAnchor.constraint(equalTo: send.bottomAnchor, constant: 15.0),
+            register.heightAnchor.constraint(equalToConstant: 50.0)
+        ]
         
-        //NSLayoutConstraint.activate(passwordConstraits)
-        //NSLayoutConstraint.activate(emailConstraints)
+        NSLayoutConstraint.activate(passwordConstraits)
+        NSLayoutConstraint.activate(emailConstraints)
         NSLayoutConstraint.activate(sendConstraits)
+        NSLayoutConstraint.activate(registerConstraits)
+        
         NSLayoutConstraint.activate(scrollConstraints)
         NSLayoutConstraint.activate(containerConstraints)
-        //NSLayoutConstraint.activate(registerConstraits)
+        
         
         
         // código padrao do ios
