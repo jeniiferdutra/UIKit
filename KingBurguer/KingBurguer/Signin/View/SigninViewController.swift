@@ -172,6 +172,42 @@ class SigninViewController: UIViewController {
         NSLayoutConstraint.activate(containerConstraints)
         //NSLayoutConstraint.activate(registerConstraits)
         
+        
+        // código padrao do ios
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(onKeyboardNotification),
+                                               name: UIResponder.keyboardWillHideNotification, // qnd o teclado desaparecer essa funcao sera disparads
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(onKeyboardNotification),
+                                               name: UIResponder.keyboardWillShowNotification, // qnd o teclado aparecer essa funcao sera disparads
+                                               object: nil)
+        
+    }
+    
+    @objc func onKeyboardNotification(_ notification: Notification) {
+        let visible = notification.name == UIResponder.keyboardWillShowNotification
+        
+        let keyboardFrame = visible
+            ? UIResponder.keyboardFrameEndUserInfoKey
+            : UIResponder.keyboardFrameBeginUserInfoKey
+        
+        // código padrao
+        if let keyboardSize = (notification.userInfo?[keyboardFrame] as? NSValue)?.cgRectValue  { // esta pegando a prop do teclado (keyboardFrame) e convertendo para um valor (as?) e transformou o mesmo em um retangulo (cgRectValue)
+            onKeyboardChanged(visible, height: keyboardSize.height) // se o teclado esta aparecendo e qual a altura do teclado
+        }
+    }
+    
+    func onKeyboardChanged(_ visible: Bool, height: CGFloat) {
+        if (!visible) { // se o teclado estiver escondido
+            scroll.contentInset = .zero
+            scroll.scrollIndicatorInsets = .zero
+        } else { // se for visivel
+            let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: height, right: 0.0) // criando um novo conteudo com margem inferior de acordo com a altura do teclado
+            scroll.contentInset = contentInsets
+            scroll.scrollIndicatorInsets = contentInsets
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) { // método que é disparado toda vez que a view aparece
