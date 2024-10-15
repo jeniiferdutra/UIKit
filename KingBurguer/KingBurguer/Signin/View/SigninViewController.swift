@@ -100,7 +100,9 @@ class SigninViewController: UIViewController {
             container.topAnchor.constraint(equalTo: scroll.topAnchor),
             container.leadingAnchor.constraint(equalTo: scroll.leadingAnchor),
             container.trailingAnchor.constraint(equalTo: scroll.trailingAnchor),
-            container.bottomAnchor.constraint(equalTo: scroll.bottomAnchor)
+            container.bottomAnchor.constraint(equalTo: scroll.bottomAnchor),
+            
+            container.heightAnchor.constraint(equalToConstant: 500)
         ]
         
         let emailConstraints = [
