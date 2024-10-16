@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D010D7262CACD318006B8546 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D010D7252CACD318006B8546 /* SignUpCoordinator.swift */; };
+		D07C36992CBF281A00C3FD5E /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C36982CBF281A00C3FD5E /* LoadingButton.swift */; };
 		D07DC1B22CA4FDAD0006D4EA /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07DC1B12CA4FDAD0006D4EA /* SignInCoordinator.swift */; };
 		D082666B2C8BB1DC007F3E01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D082666A2C8BB1DC007F3E01 /* AppDelegate.swift */; };
 		D082666D2C8BB1DC007F3E01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D082666C2C8BB1DC007F3E01 /* SceneDelegate.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		D010D7252CACD318006B8546 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
+		D07C36982CBF281A00C3FD5E /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
 		D07DC1B12CA4FDAD0006D4EA /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
 		D08266672C8BB1DC007F3E01 /* KingBurguer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KingBurguer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D082666A2C8BB1DC007F3E01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +57,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D07C36962CBF27B300C3FD5E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D07C36972CBF27F000C3FD5E /* View */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D07C36972CBF27F000C3FD5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D07C36982CBF281A00C3FD5E /* LoadingButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D082665E2C8BB1DC007F3E01 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +92,7 @@
 		D08266692C8BB1DC007F3E01 /* KingBurguer */ = {
 			isa = PBXGroup;
 			children = (
+				D07C36962CBF27B300C3FD5E /* Common */,
 				D08B1A4A2CB5FC1A00372D1F /* Home */,
 				D09AE9212CA3A0ED00EF4904 /* SignUp */,
 				D082DD412C8E7C00003B9389 /* Signin */,
@@ -244,6 +263,7 @@
 				D010D7262CACD318006B8546 /* SignUpCoordinator.swift in Sources */,
 				D07DC1B22CA4FDAD0006D4EA /* SignInCoordinator.swift in Sources */,
 				D086F0E92CAE2F66006B36AC /* SignUpState.swift in Sources */,
+				D07C36992CBF281A00C3FD5E /* LoadingButton.swift in Sources */,
 				D08B1A522CB5FD7400372D1F /* HomeViewModel.swift in Sources */,
 				D09AE9242CA3A1E200EF4904 /* SignUpViewController.swift in Sources */,
 				D082666D2C8BB1DC007F3E01 /* SceneDelegate.swift in Sources */,

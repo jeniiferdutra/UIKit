@@ -18,7 +18,7 @@ class SigninViewController: UIViewController {
     
     let container: UIView = {
         let v = UIView()
-        v.backgroundColor = .gray
+        v.backgroundColor = .systemBackground
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
@@ -26,7 +26,7 @@ class SigninViewController: UIViewController {
     // 1. definicao de layout
     lazy var email: UITextField = { // centralizar os componentes num lugar só
         let ed = UITextField()
-        ed.backgroundColor = .blue
+        ed.borderStyle = .roundedRect
         ed.placeholder = "Entre com seu e-mail"
         ed.returnKeyType = .next
         ed.delegate = self // a viewcontroller que vai administrar os eventos
@@ -36,7 +36,7 @@ class SigninViewController: UIViewController {
     
     lazy var password: UITextField = {
         let ed = UITextField()
-        ed.backgroundColor = .red
+        ed.borderStyle = .roundedRect
         ed.placeholder = "Entre com sua senha"
         ed.returnKeyType = .done
         ed.delegate = self
@@ -44,21 +44,18 @@ class SigninViewController: UIViewController {
         return ed
     }()
     
-    lazy var send: UIButton = { // lazy var = so vai chamar este bloco qnd precisarmos dele
-        let btn = UIButton()
-        btn.setTitle("Entrar", for: .normal)
-        btn.setTitleColor(.black, for: .normal)
-        btn.backgroundColor = .yellow
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.addTarget(self, action: #selector(sendDidTap), for: .touchUpInside)
+    lazy var send: LoadingButton = { // lazy var = so vai chamar este bloco qnd precisarmos dele
+        let btn = LoadingButton()
+        btn.title = "Entrar"
+        btn.backgroundColor = .red
+        btn.addTarget(self, action: #selector(sendDidTap))
         return btn
     }()
     
     lazy var register: UIButton = {
         let btn = UIButton()
         btn.setTitle("Criar Conta", for: .normal)
-        btn.setTitleColor(.white, for: .normal)
-        btn.backgroundColor = .purple
+        btn.setTitleColor(.label, for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.addTarget(self, action: #selector(registerDidTap), for: .touchUpInside)
         return btn
@@ -227,7 +224,7 @@ extension SigninViewController: SignInViewModelDelegate {
         case .none:
             break
         case .loading:
-            // mostrar o progress
+            send.startLoading(true)
             break
         case .goToHome:
             // navegar pela tela principal
