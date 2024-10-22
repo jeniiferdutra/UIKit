@@ -88,7 +88,6 @@ class SigninViewController: UIViewController {
             scroll.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ]
         
-        
         let heightConstraints = container.heightAnchor.constraint(equalTo: view.heightAnchor)
         heightConstraints.priority = .defaultLow // significa q ela vai respeitar a parte crescente da altura baseado no componete da scrollview para que ele possa crescer dinamicamente
         heightConstraints.isActive = true
