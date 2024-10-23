@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D010D7262CACD318006B8546 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D010D7252CACD318006B8546 /* SignUpCoordinator.swift */; };
+		D07639BB2CC9B56700C007D6 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07639BA2CC9B56700C007D6 /* FeedTableViewCell.swift */; };
 		D07C36992CBF281A00C3FD5E /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C36982CBF281A00C3FD5E /* LoadingButton.swift */; };
 		D07DC1B22CA4FDAD0006D4EA /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07DC1B12CA4FDAD0006D4EA /* SignInCoordinator.swift */; };
 		D082666B2C8BB1DC007F3E01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D082666A2C8BB1DC007F3E01 /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		D010D7252CACD318006B8546 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
+		D07639BA2CC9B56700C007D6 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		D07C36982CBF281A00C3FD5E /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
 		D07DC1B12CA4FDAD0006D4EA /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
 		D08266672C8BB1DC007F3E01 /* KingBurguer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KingBurguer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				D09442412CC897F6001972A2 /* FeedViewViewController.swift */,
+				D07639BA2CC9B56700C007D6 /* FeedTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				D086F0E72CAE2EE2006B36AC /* SignUpViewModel.swift in Sources */,
 				D09442442CC89817001972A2 /* ProfileViewViewController.swift in Sources */,
 				D09442462CC8983D001972A2 /* CouponViewController.swift in Sources */,
+				D07639BB2CC9B56700C007D6 /* FeedTableViewCell.swift in Sources */,
 				D010D7262CACD318006B8546 /* SignUpCoordinator.swift in Sources */,
 				D07DC1B22CA4FDAD0006D4EA /* SignInCoordinator.swift in Sources */,
 				D086F0E92CAE2F66006B36AC /* SignUpState.swift in Sources */,

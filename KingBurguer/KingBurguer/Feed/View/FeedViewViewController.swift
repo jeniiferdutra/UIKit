@@ -12,7 +12,7 @@ class FeedViewViewController: UIViewController {
     private let homeFeedTable: UITableView = {
         let tv = UITableView()
         // uitableview trabalha em conjunto com a uitablecell
-        tv.register(UITableViewCell.self, forCellReuseIdentifier: "cellid")
+        tv.register(FeedTableViewCell.self, forCellReuseIdentifier: FeedTableViewCell.identifier)
         tv.backgroundColor = UIColor.cyan
         return tv
     }()
@@ -42,7 +42,7 @@ extension FeedViewViewController: UITableViewDataSource {
     
     // mensagem de texto
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellid", for: indexPath)
+        let cell: FeedTableViewCell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as! FeedTableViewCell
         
         cell.textLabel?.text = "Olá, Mundo! \(indexPath.row)" // indexpath vai mostrar a quant de linhas
         
