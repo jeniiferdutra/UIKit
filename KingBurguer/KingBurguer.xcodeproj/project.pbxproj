@@ -21,6 +21,9 @@
 		D08B1A4C2CB5FCBF00372D1F /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08B1A4B2CB5FCBF00372D1F /* HomeCoordinator.swift */; };
 		D08B1A502CB5FD0400372D1F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08B1A4F2CB5FD0400372D1F /* HomeViewController.swift */; };
 		D08B1A522CB5FD7400372D1F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08B1A512CB5FD7400372D1F /* HomeViewModel.swift */; };
+		D09442422CC897F6001972A2 /* FeedViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09442412CC897F6001972A2 /* FeedViewViewController.swift */; };
+		D09442442CC89817001972A2 /* ProfileViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09442432CC89817001972A2 /* ProfileViewViewController.swift */; };
+		D09442462CC8983D001972A2 /* CouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09442452CC8983D001972A2 /* CouponViewController.swift */; };
 		D0957F952C98F562004D5DF7 /* SigninState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0957F942C98F562004D5DF7 /* SigninState.swift */; };
 		D09AE9242CA3A1E200EF4904 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09AE9232CA3A1E200EF4904 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +45,9 @@
 		D08B1A4B2CB5FCBF00372D1F /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		D08B1A4F2CB5FD0400372D1F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D08B1A512CB5FD7400372D1F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		D09442412CC897F6001972A2 /* FeedViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewViewController.swift; sourceTree = "<group>"; };
+		D09442432CC89817001972A2 /* ProfileViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewViewController.swift; sourceTree = "<group>"; };
+		D09442452CC8983D001972A2 /* CouponViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponViewController.swift; sourceTree = "<group>"; };
 		D0957F942C98F562004D5DF7 /* SigninState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninState.swift; sourceTree = "<group>"; };
 		D09AE9232CA3A1E200EF4904 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +98,9 @@
 		D08266692C8BB1DC007F3E01 /* KingBurguer */ = {
 			isa = PBXGroup;
 			children = (
+				D094423F2CC89788001972A2 /* Coupon */,
+				D094423D2CC8976C001972A2 /* Profile */,
+				D094423B2CC896DF001972A2 /* Feed */,
 				D07C36962CBF27B300C3FD5E /* Common */,
 				D08B1A4A2CB5FC1A00372D1F /* Home */,
 				D09AE9212CA3A0ED00EF4904 /* SignUp */,
@@ -165,6 +174,54 @@
 				D08B1A512CB5FD7400372D1F /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D094423B2CC896DF001972A2 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				D094423C2CC8975C001972A2 /* View */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		D094423C2CC8975C001972A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D09442412CC897F6001972A2 /* FeedViewViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D094423D2CC8976C001972A2 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D094423E2CC89776001972A2 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		D094423E2CC89776001972A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D09442432CC89817001972A2 /* ProfileViewViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D094423F2CC89788001972A2 /* Coupon */ = {
+			isa = PBXGroup;
+			children = (
+				D09442402CC8978E001972A2 /* View */,
+			);
+			path = Coupon;
+			sourceTree = "<group>";
+		};
+		D09442402CC8978E001972A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D09442452CC8983D001972A2 /* CouponViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D09AE9212CA3A0ED00EF4904 /* SignUp */ = {
@@ -260,11 +317,14 @@
 				D082666B2C8BB1DC007F3E01 /* AppDelegate.swift in Sources */,
 				D0957F952C98F562004D5DF7 /* SigninState.swift in Sources */,
 				D086F0E72CAE2EE2006B36AC /* SignUpViewModel.swift in Sources */,
+				D09442442CC89817001972A2 /* ProfileViewViewController.swift in Sources */,
+				D09442462CC8983D001972A2 /* CouponViewController.swift in Sources */,
 				D010D7262CACD318006B8546 /* SignUpCoordinator.swift in Sources */,
 				D07DC1B22CA4FDAD0006D4EA /* SignInCoordinator.swift in Sources */,
 				D086F0E92CAE2F66006B36AC /* SignUpState.swift in Sources */,
 				D07C36992CBF281A00C3FD5E /* LoadingButton.swift in Sources */,
 				D08B1A522CB5FD7400372D1F /* HomeViewModel.swift in Sources */,
+				D09442422CC897F6001972A2 /* FeedViewViewController.swift in Sources */,
 				D09AE9242CA3A1E200EF4904 /* SignUpViewController.swift in Sources */,
 				D082666D2C8BB1DC007F3E01 /* SceneDelegate.swift in Sources */,
 				D08B1A4C2CB5FCBF00372D1F /* HomeCoordinator.swift in Sources */,
